@@ -1,15 +1,14 @@
 # opensw23_teamLee
 
-#Team Introduction
+Team Introduction
 개인팀 : 201711326 이기천
 
-#Topic Introduction
+Topic Introduction
 
-#Results
+Results
 
-#Analysis/Visualization
+Analysis/Visualization
 
-#Installation
+Installation
 
-
-#Presentation
+Presentation
