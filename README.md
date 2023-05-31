@@ -15,8 +15,34 @@ GAN은 Generative Adversarial Networks의 약자로 우리말로는 “적대적
 ---------------------------
 Results
 
+![fakedog](https://github.com/Spstars/opensw23_teamLee/assets/83457482/3cd4dd47-7e95-4aa5-b403-a09dc5d3db23)
+
+학습시간의 한계로, 배경이 아쉽게 나온 강아지를 볼 수있습니다.
+
 Analysis/Visualization
 
-Installation
+#Installation
+
+Colab에서 conda 가상환경을 이용해 python을 3.7로 다운그레이드하고, 아래 적힌 패키지를 다운 받습니다. 
+
+    ! wget https://repo.anaconda.com/miniconda/Miniconda3-py37_4.9.2-Linux-x86_64.sh
+    ! chmod +x Miniconda3-py37_4.9.2-Linux-x86_64.sh
+    ! bash ./Miniconda3-py37_4.9.2-Linux-x86_64.sh -b -f -p /usr/local
+    import sys
+    sys.path.append('/usr/local/lib/python3.7/site-packages/')
+    !which conda  # should return /usr/local/bin/conda
+    !conda --version
+    !ls /usr/local/lib/python3.7/dist-packages
+
+    !pip install torch==1.8.0+cu111 torchvision==0.9.0+cu111 torchaudio==0.8.0 -f https://download.pytorch.org/whl/torch_stable.html
+    !pip install requests tqdm pyspng ninja imageio-ffmpeg==0.4.3 numpy
+
+그 뒤에, git clone 명령어로 git을 클론합니다.
+
+     !git clone https://github.com/NVlabs/stylegan2-ada-pytorch.git
+     
+해당 repo를 사용할 준비가 완료되었으며 train.py와 dataset_tool.py에 따라서 데이터셋과 학습을 준비하고, generate.py로 새로운 이미지를 만들 수 있습니다.
+        
+
 
 Presentation
