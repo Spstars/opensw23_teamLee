@@ -42,7 +42,10 @@ Colab에서 conda 가상환경을 이용해 python을 3.7로 다운그레이드�
      !git clone https://github.com/NVlabs/stylegan2-ada-pytorch.git
      
 해당 repo를 사용할 준비가 완료되었으며 train.py와 dataset_tool.py에 따라서 데이터셋과 학습을 준비하고, generate.py로 새로운 이미지를 만들 수 있습니다.
-        
+
+
+    #기존 파이썬 버전과 유의
+    !python3.7 train.py --data=[데이터] --source==[모델 저장 위치]        
 
 
 Presentation
