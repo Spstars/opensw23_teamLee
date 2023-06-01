@@ -23,7 +23,10 @@ Analysis/Visualization
 
 #Installation
 
-Colab에서 conda 가상환경을 이용해 python을 3.7로 다운그레이드하고, 아래 적힌 패키지를 다운 받습니다. 
+해당 내용은 StyleGan2을 학습하기 위해 Colab 환경을 사용한 예시입니다.
+
+
+Colab에서 conda 가상환경을 이용해 python을 3.7로 다운그레이드합니다. 
 
     ! wget https://repo.anaconda.com/miniconda/Miniconda3-py37_4.9.2-Linux-x86_64.sh
     ! chmod +x Miniconda3-py37_4.9.2-Linux-x86_64.sh
@@ -33,6 +36,12 @@ Colab에서 conda 가상환경을 이용해 python을 3.7로 다운그레이드�
     !which conda  # should return /usr/local/bin/conda
     !conda --version
     !ls /usr/local/lib/python3.7/dist-packages
+    
+
+Colab 환경에서 딥러닝 계산을 돕는 pytorch를 install하고, tdqm같은 보조 라이브러리를 다운받습니다.
+
+
+이 라이브러리들은 로컬 환경에 실행할 떄도 필요하니, 파이썬 버전에 맞게 다운로드 받으면 되겠습니다.(파이썬 버전 3.7, pytorch 버전 1.7,1.8,1.9 권장) 
 
     !pip install torch==1.8.0+cu111 torchvision==0.9.0+cu111 torchaudio==0.8.0 -f https://download.pytorch.org/whl/torch_stable.html
     !pip install requests tqdm pyspng ninja imageio-ffmpeg==0.4.3 numpy
@@ -46,6 +55,13 @@ Colab에서 conda 가상환경을 이용해 python을 3.7로 다운그레이드�
 
     #기존 파이썬 버전과 유의
     !python3.7 train.py --data=[데이터] --source==[모델 저장 위치]        
+
+
+로컬환경에서 사진을 생성할떄는 generate.py를 사용합니다.
+
+    python generate.py --outdir=out --trunc=1 --seeds=85,265,297,849  --network=https://nvlabs-fi-cdn.nvidia.com/stylegan2-ada-pytorch/pretrained/metfaces.pkl
+
+여기서 network에 자신이 만든 pkl파일을 넣으면 자신만의 모델을 만드는 것이 가능합니다.
 
 
 Presentation
