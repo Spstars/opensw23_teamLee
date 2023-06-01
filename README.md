@@ -18,6 +18,13 @@ GAN은 Generative Adversarial Networks의 약자로 우리말로는 “적대적
 ---------------------------
 Results
 -------------
+generate.py를 이용해 서양 초상화를 생성했습니다.
+
+![seed0849](https://github.com/Spstars/opensw23_teamLee/assets/83457482/c86d1330-a3cd-4abd-8775-68d280c6880a)
+
+projector.py를 이용해 김종국님의 사진을 초상화로 바꾸어 보았습니다.
+
+
 
 ---------------------------
 
