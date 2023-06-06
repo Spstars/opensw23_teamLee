@@ -18,9 +18,15 @@ GAN은 Generative Adversarial Networks의 약자로 우리말로는 “적대적
 ---------------------------
 Results
 -------------
-generate.py를 이용해 서양 초상화를 생성했습니다.
+generate.py에 서양화 사전학습 네트워크를 이용해 서양 초상화를 생성했습니다.
 
 ![seed0849](https://github.com/Spstars/opensw23_teamLee/assets/83457482/51b3634d-0501-4290-af5c-a7ca4bc4ded9)
+
+projector.py에 유재석님 사진을 넣어, 임의로 주어진 인물이 유재석님을 닮게 하였습니다.
+
+![proj0](https://github.com/Spstars/opensw23_teamLee/assets/83457482/ca67b88c-2516-479a-86c1-c3b67e983548)
+![proj130](https://github.com/Spstars/opensw23_teamLee/assets/83457482/0072251f-9132-443b-be17-26134479fe97)
+
 
 
 
@@ -30,11 +36,13 @@ generate.py를 이용해 서양 초상화를 생성했습니다.
 Analysis/Visualization
 -------------
 
-페이커 선수,유재석님 ,성시경님, 캡틴 아메리카(크리스 에반스), 수지님을 각각 투영하여 이미지를 만들어보았습니다.
+페이커 선수,유재석님,김종국님 ,성시경님, 캡틴 아메리카(크리스 에반스), 수지님을 각각 투영하여 이미지를 만들어보았습니다.
 
 이 모델은 안경을 쓴 분들에게 취약점을 보입니다. 안경을 눈썹으로 인식하거나, 강한 화장으로 인식하는 경우가 많았습니다.
 
 유재석님이 쓴 안경은 무사히 인식했지만, 페이커 선수나 성시경님의 안경을 화장으로 인식하는 결과가 나왔습니다.
+
+
 
 
 
