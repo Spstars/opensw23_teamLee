@@ -28,6 +28,16 @@ generate.py를 이용해 서양 초상화를 생성했습니다.
 Analysis/Visualization
 -------------
 
+페이커 선수,유재석님 ,성시경님, 캡틴 아메리카(크리스 에반스), 수지님을 각각 투영하여 이미지를 만들어보았습니다.
+
+이 모델은 안경을 쓴 분들에게 취약점을 보입니다. 안경을 눈썹으로 인식하거나, 강한 화장으로 인식하는 경우가 많았습니다.
+
+유재석님이 쓴 안경은 무사히 인식했지만, 페이커 선수나 성시경님의 안경을 화장으로 인식하는 결과가 있었습니다.
+
+
+
+
+
 ---------------------------
 Installation
 -------------
@@ -39,7 +49,7 @@ Installation
 라이브러리들은 로컬 환경뿐만 아닌 Colab환경에서도 실행할 떄도 필요하니, 파이썬 버전에 맞게 다운로드 받으면 되겠습니다.(파이썬 버전 3.7, pytorch 버전 1.7,1.8,1.9 권장) 
 
     !pip install torch==1.8.0+cu111 torchvision==0.9.0+cu111 torchaudio==0.8.0 -f https://download.pytorch.org/whl/torch_stable.html
-    !pip install requests tqdm pyspng ninja imageio-ffmpeg==0.4.3 numpy imageio
+    !pip install requests tqdm pyspng ninja imageio-ffmpeg numpy imageio
 
 
 그 뒤에, git clone 명령어로 git을 클론합니다.
@@ -56,15 +66,24 @@ Installation
 
     python generate.py --outdir=out --trunc=1 --seeds=85,265,297,849  --network=https://nvlabs-fi-cdn.nvidia.com/stylegan2-ada-pytorch/pretrained/metfaces.pkl
 
-자신의 이미지를 이용하여 이미지를 생성하고 싶다면 projector.py를 사용하면 됩니다. out 디렉토리에 결과물이 저장되며, --target의 위치를 사용자가 조절해주시길 바랍니다.
+
+--network로 사전 학습된 네트워크를 불러와 사용할 수 있습니다.   
+
+* Metface(서양화) 네트워크 : https://nvlabs-fi-cdn.nvidia.com/stylegan2-ada-pytorch/pretrained/metfaces.pkl 
+
+* FFHQ(인물 사진) 네트워크 :  https://nvlabs-fi-cdn.nvidia.com/stylegan2-ada-pytorch/pretrained/ffhq.pkl
 
 
-    python projector.py --outdir=out --target=pics/kim.png  --network=https://nvlabs-fi-cdn.nvidia.com/stylegan2-ada-pytorch/pretrained/metfaces.pkl
+
+자신의 이미지를 이용하여 이미지를 생성하고 싶다면 projector.py를 사용하면 됩니다. out 디렉토리에 결과물이 저장되며, --target의 위치를 사용자가 조절해주시길 바랍니다. 만족스러운 결과물이 150번의 반복전에 나와 기본 값을 150으로 지정했지만 --num-steps을 지정하여 반복 횟수를 바꿀 수 있습니다. 
 
 
-CPU만을 활용하도록 코드를 바꾸어 많은 시간이 소요되기 때문에 --num-steps 을 지정하여 컴퓨터 성능에 맞는 횟수를 찾도록 합니다.
 
     python projector.py --outdir=out --target=pics/kim.png  --network=https://nvlabs-fi-cdn.nvidia.com/stylegan2-ada-pytorch/pretrained/metfaces.pkl --num-steps 300
+
+
+
+만약 CPU 환경에서 파일을 생성하고 싶다면 force_fp32=True 옵션을 generate.py 와 projector.py 에 있는 G.synthesis()함수에 추가해야합니다.
 
 
 Colab에서는 conda 가상환경을 이용해 python의 버전을 3.7로 다운그레이드합니다. 

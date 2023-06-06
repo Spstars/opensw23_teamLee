@@ -7,7 +7,7 @@
 # license agreement from NVIDIA CORPORATION is strictly prohibited.
 
 """Project given image to the latent space of pretrained network pickle."""
-
+#  D:\project\opensw23_teamLee>python projector.py --outdir=out --target=pics/cap.jpg  --network=./ffhq.pkl --num-steps=150
 import copy
 import os
 from time import perf_counter
@@ -26,7 +26,7 @@ def project(
     G,
     target: torch.Tensor, # [C,H,W] and dynamic range [0,255], W & H must match G output resolution
     *,
-    num_steps                  = 1000,
+    num_steps                  = 150,
     w_avg_samples              = 10000,
     initial_learning_rate      = 0.1,
     initial_noise_factor       = 0.05,
@@ -71,7 +71,7 @@ def project(
     w_out = torch.zeros([num_steps] + list(w_opt.shape[1:]), dtype=torch.float32, device=device)
     optimizer = torch.optim.Adam([w_opt] + list(noise_bufs.values()), betas=(0.9, 0.999), lr=initial_learning_rate)
 
-    # Init noise.
+    # Init noise. , force_fp32=True
     for buf in noise_bufs.values():
         buf[:] = torch.randn_like(buf)
         buf.requires_grad = True
@@ -90,7 +90,7 @@ def project(
         # Synth images from opt_w.
         w_noise = torch.randn_like(w_opt) * w_noise_scale
         ws = (w_opt + w_noise).repeat([1, G.mapping.num_ws, 1])
-        synth_images = G.synthesis(ws, noise_mode='const', force_fp32=True)
+        synth_images = G.synthesis(ws, noise_mode='const')
 
         # Downsample image to 256x256 if it's larger than that. VGG was built for 224x224 images.
         synth_images = (synth_images + 1) * (255/2)
@@ -152,7 +152,7 @@ def run_projection(
     Examples:
 
     \b
-    python projector.py --outdir=out --target=pics/kim.png  --network=https://nvlabs-fi-cdn.nvidia.com/stylegan2-ada-pytorch/pretrained/ffhq.pkl
+    python projector.py --outdir=out --target=pics/kim.png  --network=ffhq.pkl
     python projector.py --outdir=out --target=~/mytargetimg.png --network=https://nvlabs-fi-cdn.nvidia.com/stylegan2-ada-pytorch/pretrained/ffhq.pkl
     """
     np.random.seed(seed)
@@ -160,13 +160,14 @@ def run_projection(
 
     # Load networks.
     print('Loading networks from "%s"...' % network_pkl)
-    # device = torch.device('cuda')
-    device=torch.device('cpu')
+    device = torch.device('cuda')
+    #device=torch.device('cpu')
     with dnnlib.util.open_url(network_pkl) as fp:
         G = legacy.load_network_pkl(fp)['G_ema'].requires_grad_(False).to(device) # type: ignore
 
     # Load target image.
     target_pil = PIL.Image.open(target_fname).convert('RGB')
+    target_pil.show()
     w, h = target_pil.size
     s = min(w, h)
     target_pil = target_pil.crop(((w - s) // 2, (h - s) // 2, (w + s) // 2, (h + s) // 2))
@@ -189,21 +190,25 @@ def run_projection(
 
     # Save final projected frame and W vector.
     target_pil.save(f'{outdir}/target.png')
+
+    for idx,projected_w in enumerate(projected_w_steps[:1000]):
+        if idx%10==0:
+            synth_image = G.synthesis(projected_w.unsqueeze(0), noise_mode='const')
+            synth_image = (synth_image + 1) * (255/2)
+            synth_image = synth_image.permute(0, 2, 3, 1).clamp(0, 255).to(torch.uint8)[0].cpu().numpy()
+            PIL.Image.fromarray(synth_image, 'RGB').save(f'{outdir}/save/proj'+str(idx)+".png")
     projected_w = projected_w_steps[-1]
-    synth_image = G.synthesis(projected_w.unsqueeze(0), noise_mode='const', force_fp32=True)
-    synth_image = (synth_image + 1) * (255/2)
-    synth_image = synth_image.permute(0, 2, 3, 1).clamp(0, 255).to(torch.uint8)[0].cpu().numpy()
-    PIL.Image.fromarray(synth_image, 'RGB').save(f'{outdir}/proj.png')
     np.savez(f'{outdir}/projected_w.npz', w=projected_w.unsqueeze(0).cpu().numpy())
 
     if save_video:
-        video = imageio.get_writer(f'{outdir}/proj.mp4', mode='I', fps=10, codec='libx264', bitrate='16M')
+        video = imageio.get_writer(f'{outdir}/proj.mp4', mode='I', fps=10)
         print (f'Saving optimization progress video "{outdir}/proj.mp4"')
         for projected_w in projected_w_steps:
-            synth_image = G.synthesis(projected_w.unsqueeze(0), noise_mode='const', force_fp32=True)
+            synth_image = G.synthesis(projected_w.unsqueeze(0), noise_mode='const')
             synth_image = (synth_image + 1) * (255/2)
             synth_image = synth_image.permute(0, 2, 3, 1).clamp(0, 255).to(torch.uint8)[0].cpu().numpy()
-            video.append_data(np.concatenate([target_uint8, synth_image], axis=1))
+            new_img=np.concatenate([target_uint8, synth_image], axis=1)
+            video.append_data(new_img)
         video.close()
 
 
