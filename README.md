@@ -23,6 +23,8 @@ generate.py를 이용해 서양 초상화를 생성했습니다.
 ![seed0849](https://github.com/Spstars/opensw23_teamLee/assets/83457482/51b3634d-0501-4290-af5c-a7ca4bc4ded9)
 
 
+
+
 ---------------------------
 
 Analysis/Visualization
@@ -32,7 +34,9 @@ Analysis/Visualization
 
 이 모델은 안경을 쓴 분들에게 취약점을 보입니다. 안경을 눈썹으로 인식하거나, 강한 화장으로 인식하는 경우가 많았습니다.
 
-유재석님이 쓴 안경은 무사히 인식했지만, 페이커 선수나 성시경님의 안경을 화장으로 인식하는 결과가 있었습니다.
+유재석님이 쓴 안경은 무사히 인식했지만, 페이커 선수나 성시경님의 안경을 화장으로 인식하는 결과가 나왔습니다.
+
+
 
 
 
@@ -79,11 +83,15 @@ Installation
 
 
 
-    python projector.py --outdir=out --target=pics/kim.png  --network=https://nvlabs-fi-cdn.nvidia.com/stylegan2-ada-pytorch/pretrained/metfaces.pkl --num-steps 300
+    python projector.py --outdir=out --target=pics/kim.png  --network=https://nvlabs-fi-cdn.nvidia.com/stylegan2-ada-pytorch/pretrained/ffhq.pkl --num-steps 300
 
 
+out 디렉토리에 projected_w.npz이 저장되게 되며, projector에서 훈련한 network를 통해 추가로 그림을 생성할 수 있습니다.
 
-만약 CPU 환경에서 파일을 생성하고 싶다면 force_fp32=True 옵션을 generate.py 와 projector.py 에 있는 G.synthesis()함수에 추가해야합니다.
+
+    python generate.py --outdir=out --projected-w=out/projected_w.npz  --network=ffhq.pkl
+
+만약 CPU 환경에서 파일을 생성하고 싶다면 force_fp32=True 옵션을 generate.py 와 projector.py 에 있는 G.synthesis()함수에 추가하면 됩니다.
 
 
 Colab에서는 conda 가상환경을 이용해 python의 버전을 3.7로 다운그레이드합니다. 
