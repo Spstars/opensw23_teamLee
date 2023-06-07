@@ -163,4 +163,8 @@ train.py와 dataset_tool.py에 따라서 데이터셋과 학습을 준비하면 
 Presentation
 -------------
 
+
+https://youtu.be/Aq98IffyBb0
+
+
 ---------------------------
