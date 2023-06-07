@@ -19,6 +19,8 @@ import PIL.Image
 import torch
 
 import legacy
+#python generate.py --outdir=out --trunc=1 --seeds=85,265,297,849 --network=https://nvlabs-fi-cdn.nvidia.com/stylegan2-ada-pytorch/pretrained/metfaces.pkl
+#python generate.py --outdir=out --trunc=1 --seeds=85,265,297,849 --network=https://nvlabs-fi-cdn.nvidia.com/stylegan2-ada-pytorch/pretrained/ffhq.pkl
 
 #----------------------------------------------------------------------------
 
@@ -59,8 +61,7 @@ def generate_images(
 
     \b
     # Generate curated MetFaces images without truncation (Fig.10 left)
-    python generate.py --outdir=out --trunc=1 --seeds=85,265,297,849 \\
-        --network=https://nvlabs-fi-cdn.nvidia.com/stylegan2-ada-pytorch/pretrained/metfaces.pkl
+    python generate.py --outdir=out --trunc=1 --seeds=85,265,297,849 --network=https://nvlabs-fi-cdn.nvidia.com/stylegan2-ada-pytorch/pretrained/metfaces.pkl
 
     \b
     # Generate uncurated MetFaces images with truncation (Fig.12 upper left)
