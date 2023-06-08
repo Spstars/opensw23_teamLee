@@ -106,9 +106,9 @@ https://youtu.be/XJrJhpsnqaQ
 Installation
 -------------
 
+Version 11.0이상의 CUDA toolkit이 요구됩니다.
 
 딥러닝 계산을 돕는 pytorch를 install하고, tdqm같은 보조 라이브러리를 다운받습니다.
-
 
 라이브러리들은 로컬 환경뿐만 아닌 Colab환경에서도 실행할 떄도 필요하니, 파이썬 버전과 그래픽 카드 드라이버에 맞게 Pytorch를 다운로드 받으면 되겠습니다.(파이썬 버전 3.7, pytorch 버전 1.7,1.8,1.9 권장) 
 
