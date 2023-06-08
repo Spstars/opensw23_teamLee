@@ -28,7 +28,11 @@ Results
 -------------
 서양화 사전학습 네트워크와 이미지 생성을 이용해 서양 초상화를 생성했습니다.
 
-서양화 생성 결과 :
+서양화 생성 예시입니다.
+
+사용 네트워크 : https://nvlabs-fi-cdn.nvidia.com/stylegan2-ada-pytorch/pretrained/metfaces.pkl
+
+seed : 85
 
 ![seed0849](https://github.com/Spstars/opensw23_teamLee/assets/83457482/51b3634d-0501-4290-af5c-a7ca4bc4ded9)
 
