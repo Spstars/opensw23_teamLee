@@ -28,9 +28,13 @@ Results
 -------------
 서양화 사전학습 네트워크와 이미지 생성을 이용해 서양 초상화를 생성했습니다.
 
+서양화 생성 결과 :
+
 ![seed0849](https://github.com/Spstars/opensw23_teamLee/assets/83457482/51b3634d-0501-4290-af5c-a7ca4bc4ded9)
 
 이미지 투영을 하는 프로그램에 유재석님 사진을 넣어, 임의로 주어진 인물이 유재석님을 닮게 하였습니다.
+
+기본 인물　　　　　　　　　　　　　　　　유재석님에 투영된 결과
 
 ![proj0](https://github.com/Spstars/opensw23_teamLee/assets/83457482/ca67b88c-2516-479a-86c1-c3b67e983548)
 ![proj130](https://github.com/Spstars/opensw23_teamLee/assets/83457482/0072251f-9132-443b-be17-26134479fe97)
@@ -42,38 +46,51 @@ Results
 <details>
 <summary>사진접기/펼치기</summary>
 
-1.크리스 에반스
-   
+1. 크리스 에반스
+
+
+   기본 인물　　　　　　　　　　　　에반스에 투영된 결과　　　　　　　　　크리스 에반스
+
+
    ![cap](https://github.com/Spstars/opensw23_teamLee/assets/83457482/c5528226-d17f-48cc-aeb0-7038e5cd9fdb)
    
    
 점점 불쾌할 수 있으니, 불쾌함을 많이 느낀다면 접는 것이 좋겠습니다.  
+
+
+2. 작성자(안경을 포함)
+
+   기본 인물　　　　　　　　　　　　제 사진에 투영된 결과　　　　　　　　　　　　작성자
+   
+   ![me](https://github.com/Spstars/opensw23_teamLee/assets/83457482/34f71fee-cbee-41d1-90e1-3056a4510461)
    
    
-2.김종국
-   
+4. 김종국
+
+   기본 인물　　　　　　　　　　　　김종국님에 투영된 결과　　　　　　　　　김종국
    ![김종국](https://github.com/Spstars/opensw23_teamLee/assets/83457482/98bc214d-4748-4f1e-99d9-802721a7683a)
    
   
-3.성시경
+5. 성시경
    
-   
+   기본 인물　　　　　　　　　　　　성시경님에 투영된 결과　　　　　　　　　성시경 
+  
    ![성시경](https://github.com/Spstars/opensw23_teamLee/assets/83457482/51f9354f-d77f-49d4-847f-ec1d7bd23f8f)
    
  
-4.페이커 선수
-   
+6. 페이커 선수
+
+   기본 인물　　　　　　　　　　　　페이커님에 투영된 결과　　　　　　　　　페이커
+
    ![faker](https://github.com/Spstars/opensw23_teamLee/assets/83457482/c579ca3e-a1a7-4596-a28a-e5caa3fe0749)
 
-5.수지
-   
+7. 수지
+
+   기본 인물　　　　　　　　　　　　수지님에 투영된 결과　　　　　　　　　　　　수지
+
    ![suju](https://github.com/Spstars/opensw23_teamLee/assets/83457482/c34f9931-aba4-4ccd-a6c0-2ad4c85b2f09)   
    
    
-6. 작성자
-   
-   
-   ![me](https://github.com/Spstars/opensw23_teamLee/assets/83457482/34f71fee-cbee-41d1-90e1-3056a4510461)
 
 
 </details>
