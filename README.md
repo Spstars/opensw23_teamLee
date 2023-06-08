@@ -107,7 +107,7 @@ Installation
 딥러닝 계산을 돕는 pytorch를 install하고, tdqm같은 보조 라이브러리를 다운받습니다.
 
 
-라이브러리들은 로컬 환경뿐만 아닌 Colab환경에서도 실행할 떄도 필요하니, 파이썬 버전에 맞게 다운로드 받으면 되겠습니다.(파이썬 버전 3.7, pytorch 버전 1.7,1.8,1.9 권장) 
+라이브러리들은 로컬 환경뿐만 아닌 Colab환경에서도 실행할 떄도 필요하니, 파이썬 버전과 그래픽 카드 드라이버에 맞게 Pytorch를 다운로드 받으면 되겠습니다.(파이썬 버전 3.7, pytorch 버전 1.7,1.8,1.9 권장) 
 
     !pip install torch==1.8.0+cu111 torchvision==0.9.0+cu111 torchaudio==0.8.0 -f https://download.pytorch.org/whl/torch_stable.html
     !pip install requests tqdm pyspng ninja imageio-ffmpeg numpy imageio
@@ -134,7 +134,7 @@ Installation
 * FFHQ(인물 사진) 네트워크 :  https://nvlabs-fi-cdn.nvidia.com/stylegan2-ada-pytorch/pretrained/ffhq.pkl
 * 자동차 사진 네트워크 : https://nvlabs-fi-cdn.nvidia.com/stylegan2-ada-pytorch/pretrained/cifar10.pkl
 * 고양이 네트워크 : https://nvlabs-fi-cdn.nvidia.com/stylegan2-ada-pytorch/pretrained/afhqcat.pkl
-* 강아지 네트워크 : (https://nvlabs-fi-cdn.nvidia.com/stylegan2-ada-pytorch/pretrained/afhqdog.pkl
+* 강아지 네트워크 : https://nvlabs-fi-cdn.nvidia.com/stylegan2-ada-pytorch/pretrained/afhqdog.pkl
 
 
 
