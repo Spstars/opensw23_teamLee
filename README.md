@@ -23,11 +23,11 @@ GAN은 Generative Adversarial Networks의 약자로 우리말로는 “적대적
 ---------------------------
 Results
 -------------
-generate.py에 서양화 사전학습 네트워크를 이용해 서양 초상화를 생성했습니다.
+서양화 사전학습 네트워크와 이미지 생성을 이용해 서양 초상화를 생성했습니다.
 
 ![seed0849](https://github.com/Spstars/opensw23_teamLee/assets/83457482/51b3634d-0501-4290-af5c-a7ca4bc4ded9)
 
-projector.py에 유재석님 사진을 넣어, 임의로 주어진 인물이 유재석님을 닮게 하였습니다.
+이미지 투영을 하는 프로그램에 유재석님 사진을 넣어, 임의로 주어진 인물이 유재석님을 닮게 하였습니다.
 
 ![proj0](https://github.com/Spstars/opensw23_teamLee/assets/83457482/ca67b88c-2516-479a-86c1-c3b67e983548)
 ![proj130](https://github.com/Spstars/opensw23_teamLee/assets/83457482/0072251f-9132-443b-be17-26134479fe97)
