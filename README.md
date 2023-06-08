@@ -35,13 +35,16 @@ projector.py에 유재석님 사진을 넣어, 임의로 주어진 인물이 유
 페이커 선수,김종국님 ,성시경님,캡틴 아메리카(크리스 에반스), 수지님, 그리고 저를 투영하여 이미지를 만들어보았습니다.
 
 
-
+\
 <details>
 <summary>사진접기/펼치기</summary>
 
 1.크리스 에반스
    
    ![cap](https://github.com/Spstars/opensw23_teamLee/assets/83457482/c5528226-d17f-48cc-aeb0-7038e5cd9fdb)
+   
+   
+점점 불쾌할 수 있으니, 불쾌함을 많이 느낀다면 접는 것이 좋겠습니다.  
    
    
 2.김종국
