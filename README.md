@@ -58,13 +58,18 @@ Results
 점점 불쾌할 수 있으니, 불쾌함을 많이 느낀다면 접는 것이 좋겠습니다.  
 
 
-2. 작성자(안경을 포함)
+2. 작성자(안경 착용)
 
    기본 인물　　　　　　　　　　　　제 사진에 투영된 결과　　　　　　　　　　　　작성자
    
    ![me](https://github.com/Spstars/opensw23_teamLee/assets/83457482/34f71fee-cbee-41d1-90e1-3056a4510461)
    
+3. 작성자(안경 미착용)
+
+   기본 인물　　　　　　　　　　　　제 사진에 투영된 결과　　　　　　　　　　　　작성자
    
+   ![me2](https://github.com/Spstars/opensw23_teamLee/assets/83457482/ff101747-e076-4919-bf0c-64da09b8ccd6)
+
 4. 김종국
 
    기본 인물　　　　　　　　　　　　김종국님에 투영된 결과　　　　　　　　　김종국
